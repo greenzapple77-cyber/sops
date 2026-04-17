@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&amp;family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#ebeef0",
+                    "background": "#f8f9fa",
+                    "inverse-surface": "#0c0f10",
+                    "secondary-fixed": "#caebcc",
+                    "error-dim": "#67040d",
+                    "secondary": "#49664e",
+                    "outline-variant": "#adb3b5",
+                    "secondary-container": "#caebcc",
+                    "on-tertiary": "#fff7f4",
+                    "on-secondary-fixed-variant": "#46624a",
+                    "on-tertiary-fixed-variant": "#6e6054",
+                    "tertiary-fixed-dim": "#efdccd",
+                    "surface": "#f8f9fa",
+                    "surface-container-low": "#f1f4f5",
+                    "primary": "#336769",
+                    "surface-tint": "#336769",
+                    "on-surface-variant": "#5a6062",
+                    "on-primary-fixed-variant": "#2f6365",
+                    "on-tertiary-fixed": "#504439",
+                    "error-container": "#fa746f",
+                    "on-secondary-container": "#3c5841",
+                    "surface-variant": "#dee3e6",
+                    "on-error-container": "#6e0a12",
+                    "primary-container": "#b7ecee",
+                    "secondary-dim": "#3e5a42",
+                    "surface-container-highest": "#dee3e6",
+                    "tertiary-fixed": "#feeadb",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary-container": "#feeadb",
+                    "outline": "#767c7e",
+                    "tertiary": "#6a5d51",
+                    "primary-fixed-dim": "#a9dee0",
+                    "on-primary-fixed": "#0a4749",
+                    "on-primary-container": "#24595c",
+                    "primary-fixed": "#b7ecee",
+                    "inverse-primary": "#c5fbfc",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#e8ffe8",
+                    "on-error": "#fff7f6",
+                    "surface-bright": "#f8f9fa",
+                    "on-background": "#2d3335",
+                    "on-secondary-fixed": "#2a452f",
+                    "surface-container-high": "#e5e9eb",
+                    "on-tertiary-container": "#63564b",
+                    "on-primary": "#e2feff",
+                    "surface-dim": "#d5dbdd",
+                    "secondary-fixed-dim": "#bdddbe",
+                    "error": "#a83836",
+                    "tertiary-dim": "#5e5145",
+                    "on-surface": "#2d3335",
+                    "primary-dim": "#255b5d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Anuphan", "sans-serif"],
+                    "body": ["Anuphan", "sans-serif"],
+                    "label": ["Anuphan", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Anuphan', sans-serif;
+            background-color: #f8f9fa;
+            color: #2d3335;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-transition {
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(248,249,250,0) 100%);
+        }
+        .no-line-rule { border: none !important; }
+        .lustre-gradient {
+            background: linear-gradient(135deg, #336769 0%, #b7ecee 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- ===== UNIFIED NAV ===== -->
+<header id="main-nav" class="fixed top-0 w-full z-50 bg-white/70 glass-nav shadow-[0px_20px_40px_rgba(45,51,53,0.06)] transition-opacity duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-10 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#336769] hover:opacity-80 transition-opacity">RiceTech</a>
+    <div class="hidden md:flex gap-10 items-center">
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase transition-colors " href="index.html">หน้าหลัก</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="contact.html">ติดต่อเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="lustre-gradient text-white px-8 py-3 rounded-full font-bold scale-95 active:opacity-80 transition-transform shadow-lg hidden md:flex">Shop Now</button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-[#336769]/10 rounded-full transition-colors text-[#336769]">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden border-t border-[#336769]/10 bg-white/95">
+    <div class="max-w-7xl mx-auto px-10 flex flex-col py-3 gap-1 font-['Anuphan'] text-sm normal-case">
+      <a class="py-3 border-b border-[#336769]/5 transition-colors " href="index.html">หน้าหลัก</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="contact.html">ติดต่อเรา</a>
+      <a class="py-3 text-slate-500 hover:text-[#336769] transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+  </div>
+</header>
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});
+  (function(){var l=0,n=document.getElementById('main-nav');window.addEventListener('scroll',function(){if(window.innerWidth>=768){n.style.opacity='1';n.style.pointerEvents='auto';return;}var c=window.scrollY;if(c>l&&c>80){n.style.opacity='0';n.style.pointerEvents='none';}else{n.style.opacity='1';n.style.pointerEvents='auto';}l=c;});})();
+</script>
+<!-- ===== END NAV ===== -->
+
+<!-- Policy Grid (Asymmetric) -->
+<div class="space-y-24">
+<!-- 1. Privacy Policy -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start" id="privacy">
+<div class="md:col-span-4 sticky top-28">
+<div class="bg-secondary-container/30 p-8 rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="lock">lock</span>
+<h2 class="text-2xl font-bold text-primary mb-2">Privacy Policy</h2>
+<p class="text-sm font-label uppercase tracking-widest text-secondary">นโยบายความเป็นส่วนตัว</p>
+</div>
+</div>
+<div class="md:col-span-8 bg-surface-container-lowest p-10 md:p-14 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<div class="prose prose-slate max-w-none space-y-6 leading-[1.8] text-on-surface-variant">
+<p>RiceTech เคารพความเป็นส่วนตัวของผู้เข้าชมและลูกค้าของเราทุกคน ข้อมูลส่วนบุคคลที่คุณมอบให้เราจะถูกเก็บรักษาไว้อย่างปลอดภัยสูงสุด โดยมีวัตถุประสงค์เพื่อการปรับปรุงการบริการและการจัดส่งสินค้าเท่านั้น</p>
+<h3 class="text-xl font-bold text-on-surface">การเก็บรวบรวมข้อมูล</h3>
+<p>เราเก็บรวบรวมข้อมูลที่จำเป็น เช่น ชื่อ ที่อยู่ เบอร์โทรศัพท์ และอีเมล เพื่อใช้ในการดำเนินการตามคำสั่งซื้อและการแจ้งข่าวสารโปรโมชั่น (เฉพาะผู้ที่ยินยอมเท่านั้น)</p>
+<h3 class="text-xl font-bold text-on-surface">การเปิดเผยข้อมูล</h3>
+<p>เรายืนยันว่าจะไม่ขาย หรือแบ่งปันข้อมูลส่วนบุคคลของคุณให้กับบุคคลที่สามเพื่อวัตถุประสงค์ทางการตลาดโดยไม่ได้รับความยินยอม ยกเว้นพันธมิตรด้านการขนส่งที่เราต้องใช้ในการนำส่งสินค้าถึงมือคุณ</p>
+</div>
+</div>
+</section>
+<!-- 2. Shipping and Returns Policy -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start" id="shipping">
+<div class="md:col-span-8 order-2 md:order-1 bg-surface-container-lowest p-10 md:p-14 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<div class="prose prose-slate max-w-none space-y-6 leading-[1.8] text-on-surface-variant">
+<h3 class="text-xl font-bold text-on-surface">การจัดส่งสินค้า</h3>
+<p>เราใช้ขนส่งชั้นนำเพื่อความรวดเร็วและปลอดภัย โดยปกติจะใช้เวลาจัดส่ง 2-3 วันทำการสำหรับกรุงเทพฯ และปริมณฑล และ 3-5 วันสำหรับพื้นที่ต่างจังหวัด คุณจะได้รับเลขพัสดุผ่านทางอีเมลทันทีที่ส่งสินค้า</p>
+<h3 class="text-xl font-bold text-on-surface">การเปลี่ยนสินค้า</h3>
+<p>ลูกค้าสามารถแจ้งขอเปลี่ยนสินค้าได้ภายใน 7 วันหลังจากได้รับสินค้า ในกรณีที่สินค้าชำรุดเสียหายจากการผลิต หรือส่งผิดรุ่น โดยสินค้าต้องอยู่ในสภาพสมบูรณ์ พร้อมบรรจุภัณฑ์ดั้งเดิม</p>
+</div>
+</div>
+<div class="md:col-span-4 order-1 md:order-2 sticky top-28">
+<div class="bg-tertiary-container/30 p-8 rounded-xl text-right">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4" data-icon="local_shipping">local_shipping</span>
+<h2 class="text-2xl font-bold text-tertiary mb-2">Shipping &amp; Returns</h2>
+<p class="text-sm font-label uppercase tracking-widest text-tertiary">นโยบายการจัดส่งและเปลี่ยนสินค้า</p>
+</div>
+</div>
+</section>
+<!-- Featured Image - Lifestyle Break -->
+<div class="relative h-[400px] rounded-xl overflow-hidden my-32 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist modern kitchen interior with warm sunlight hitting a clean countertop with a premium rice cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA78XLo_RiVH9oAtOdsZZnyeM9r8jlmtkJr9bwvEqGkiCCWXQHBw06YrN0UNxr2AVIUan4ZWXVAkT-wcSugF7kY_pazMysAg4gFK0UDev2T9lT6xhHxe_cotj0GddIZcI4o7vrM5O_rrKvJnFjeVQYxRAKaPiCcB7TSdkgQEjBUT4O3Zr8HULd5dV9MelSP8fTkKlOvKjYcbbKfDxHXK5s5z483OIKXbpCf88qvXGfOuf6OkadQwYcWSE6YdR2lea0vixf6RmX_7Xc"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center p-10">
+<div class="text-center text-white max-w-xl">
+<h2 class="text-3xl font-bold mb-4">RiceTech: Innovation in every grain.</h2>
+<p class="opacity-90">เรามุ่งมั่นสร้างสรรค์ผลิตภัณฑ์ที่มีคุณภาพและการบริการที่โปร่งใส</p>
+</div>
+</div>
+</div>
+<!-- 3. Refund Policy -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start" id="refund">
+<div class="md:col-span-4 sticky top-28">
+<div class="bg-surface-container-high p-8 rounded-xl">
+<span class="material-symbols-outlined text-primary-dim text-4xl mb-4" data-icon="payments">payments</span>
+<h2 class="text-2xl font-bold text-primary-dim mb-2">Refund Policy</h2>
+<p class="text-sm font-label uppercase tracking-widest text-primary">นโยบายการคืนเงิน</p>
+</div>
+</div>
+<div class="md:col-span-8 bg-surface-container-lowest p-10 md:p-14 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<div class="prose prose-slate max-w-none space-y-6 leading-[1.8] text-on-surface-variant">
+<p>RiceTech มั่นใจในคุณภาพสินค้า แต่หากท่านไม่พอใจในบริการ เรามีมาตรการการคืนเงินที่ยุติธรรม</p>
+<h3 class="text-xl font-bold text-on-surface">เงื่อนไขการคืนเงิน</h3>
+<p>การคืนเงินจะกระทำได้ต่อเมื่อสินค้าหมดและเราไม่สามารถจัดหาทดแทนได้ หรือในกรณีที่เป็นความผิดพลาดร้ายแรงจากการผลิตที่เราตกลงรับคืนสินค้า</p>
+<p>ระยะเวลาการคืนเงินจะใช้เวลาประมาณ 7-14 วันทำการ โดยจะคืนผ่านช่องทางเดิมที่ลูกค้าชำระเงินเข้ามา</p>
+</div>
+</div>
+</section>
+<!-- 4. Terms of Service -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-20" id="terms">
+<div class="md:col-span-8 order-2 md:order-1 bg-surface-container-lowest p-10 md:p-14 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<div class="prose prose-slate max-w-none space-y-6 leading-[1.8] text-on-surface-variant">
+<h3 class="text-xl font-bold text-on-surface">ข้อตกลงการใช้งาน</h3>
+<p>การใช้งานเว็บไซต์ RiceTech และการสั่งซื้อสินค้า ถือว่าคุณยอมรับข้อตกลงและเงื่อนไขที่กำหนดไว้ทั้งหมด ข้อมูลราคาสินค้าและรายละเอียดอาจมีการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
+<p>รูปภาพและเนื้อหาทั้งหมดบนเว็บไซต์นี้เป็นลิขสิทธิ์ของ RiceTech ห้ามมิให้ผู้ใดนำไปใช้เพื่อประโยชน์ทางการค้าโดยไม่ได้รับอนุญาต</p>
+</div>
+</div>
+<div class="md:col-span-4 order-1 md:order-2 sticky top-28">
+<div class="bg-secondary-fixed/40 p-8 rounded-xl text-right">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="gavel">gavel</span>
+<h2 class="text-2xl font-bold text-secondary mb-2">Terms of Service</h2>
+<p class="text-sm font-label uppercase tracking-widest text-secondary">เงื่อนไขการใช้บริการ</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[1.5rem] bg-[#ebeef0] py-16">
+<div class="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<div class="text-lg font-semibold text-[#336769] mb-4">RiceTech</div>
+<p class="font-['Anuphan'] text-sm leading-[1.6] text-slate-600 max-w-xs">
+                    นวัตกรรมเพื่อสุขภาพและคุณภาพชีวิตที่ดีขึ้น ด้วยเทคโนโลยีการหุงข้าวที่ทันสมัยที่สุดจากเรา
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-primary">Contact Info</h4>
+<ul class="font-['Anuphan'] text-sm leading-[1.6] space-y-2 text-slate-600">
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-default">Email: contact@ricetech.com</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-default">Phone: +66 2 123 4567</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-default">Line: @ricetech</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-primary">Quick Links</h4>
+<div class="flex flex-col space-y-2 font-['Anuphan'] text-sm">
+<a class="text-slate-600 hover:text-primary hover:translate-x-1 transition-transform duration-200" href="#">เกี่ยวกับเรา</a>
+<a class="text-slate-600 hover:text-primary hover:translate-x-1 transition-transform duration-200" href="#">วิธีการสั่งซื้อ</a>
+<a class="text-slate-600 hover:text-primary hover:translate-x-1 transition-transform duration-200" href="#">คำถามที่พบบ่อย</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-10 mt-16 pt-8 border-t border-slate-200">
+<p class="font-['Anuphan'] text-sm text-slate-500 text-center md:text-left">
+                © 2024 SAOWAPAK FASHION CO., LTD. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

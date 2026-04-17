@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&amp;family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed-variant": "#6e6054",
+                "on-primary-fixed-variant": "#2f6365",
+                "tertiary-fixed": "#feeadb",
+                "error-container": "#fa746f",
+                "inverse-primary": "#c5fbfc",
+                "error": "#a83836",
+                "surface-bright": "#f8f9fa",
+                "primary-fixed-dim": "#a9dee0",
+                "outline": "#767c7e",
+                "tertiary": "#6a5d51",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#adb3b5",
+                "on-primary-fixed": "#0a4749",
+                "primary": "#336769",
+                "tertiary-dim": "#5e5145",
+                "secondary-fixed": "#caebcc",
+                "secondary-dim": "#3e5a42",
+                "surface-container-highest": "#dee3e6",
+                "surface-container": "#ebeef0",
+                "on-secondary": "#e8ffe8",
+                "on-secondary-container": "#3c5841",
+                "surface-container-low": "#f1f4f5",
+                "surface-tint": "#336769",
+                "tertiary-fixed-dim": "#efdccd",
+                "primary-dim": "#255b5d",
+                "surface": "#f8f9fa",
+                "on-tertiary-fixed": "#504439",
+                "primary-container": "#b7ecee",
+                "on-surface": "#2d3335",
+                "on-secondary-fixed": "#2a452f",
+                "error-dim": "#67040d",
+                "inverse-on-surface": "#9b9d9e",
+                "surface-dim": "#d5dbdd",
+                "on-background": "#2d3335",
+                "primary-fixed": "#b7ecee",
+                "secondary-container": "#caebcc",
+                "on-error-container": "#6e0a12",
+                "on-primary": "#e2feff",
+                "on-surface-variant": "#5a6062",
+                "secondary-fixed-dim": "#bdddbe",
+                "surface-container-high": "#e5e9eb",
+                "surface-variant": "#dee3e6",
+                "secondary": "#49664e",
+                "on-tertiary-container": "#63564b",
+                "on-tertiary": "#fff7f4",
+                "on-secondary-fixed-variant": "#46624a",
+                "on-primary-container": "#24595c",
+                "on-error": "#fff7f6",
+                "inverse-surface": "#0c0f10",
+                "tertiary-container": "#feeadb",
+                "background": "#f8f9fa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Anuphan", "sans-serif"],
+                "body": ["Anuphan", "sans-serif"],
+                "label": ["Anuphan", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Anuphan', sans-serif;
+        background-color: #f8f9fa;
+        color: #2d3335;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tonal-transition {
+        transition: background-color 0.3s ease;
+      }
+      .no-line-rule {
+        border: none !important;
+      }
+      .glass-morphism {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(24px);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- ===== UNIFIED NAV ===== -->
+<header id="main-nav" class="fixed top-0 w-full z-50 bg-white/70 glass-nav shadow-[0px_20px_40px_rgba(45,51,53,0.06)] transition-opacity duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-10 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#336769] hover:opacity-80 transition-opacity">RiceTech</a>
+    <div class="hidden md:flex gap-10 items-center">
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase transition-colors " href="index.html">หน้าหลัก</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="contact.html">ติดต่อเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="lustre-gradient text-white px-8 py-3 rounded-full font-bold scale-95 active:opacity-80 transition-transform shadow-lg hidden md:flex">Shop Now</button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-[#336769]/10 rounded-full transition-colors text-[#336769]">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden border-t border-[#336769]/10 bg-white/95">
+    <div class="max-w-7xl mx-auto px-10 flex flex-col py-3 gap-1 font-['Anuphan'] text-sm normal-case">
+      <a class="py-3 border-b border-[#336769]/5 transition-colors " href="index.html">หน้าหลัก</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="contact.html">ติดต่อเรา</a>
+      <a class="py-3 text-slate-500 hover:text-[#336769] transition-colors " href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+  </div>
+</header>
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});
+  (function(){var l=0,n=document.getElementById('main-nav');window.addEventListener('scroll',function(){if(window.innerWidth>=768){n.style.opacity='1';n.style.pointerEvents='auto';return;}var c=window.scrollY;if(c>l&&c>80){n.style.opacity='0';n.style.pointerEvents='none';}else{n.style.opacity='1';n.style.pointerEvents='auto';}l=c;});})();
+</script>
+<!-- ===== END NAV ===== -->
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)] no-line-rule tonal-transition h-20">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-10 h-full">
+<div class="text-2xl font-bold tracking-tighter text-[#336769] font-headline">RiceTech</div>
+<div class="hidden md:flex items-center gap-10 font-['Anuphan'] text-sm tracking-[0.05em] uppercase">
+<a class="text-slate-500 hover:text-[#336769] transition-colors" href="#">หน้าหลัก</a>
+<a class="text-slate-500 hover:text-[#336769] transition-colors" href="#">เกี่ยวกับเรา</a>
+<a class="text-slate-500 hover:text-[#336769] transition-colors" href="#">สินค้าทั้งหมด</a>
+<a class="text-[#336769] border-b-2 border-[#336769] pb-1 font-bold" href="#">ติดต่อเรา</a>
+<a class="text-slate-500 hover:text-[#336769] transition-colors" href="#">นโยบาย</a>
+</div>
+<button class="bg-gradient-to-br from-[#336769] to-[#b7ecee] text-[#e2feff] px-8 py-3 rounded-full font-bold scale-95 active:opacity-80 transition-transform shadow-lg">
+                Shop Now
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-24 md:py-32 px-10 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10 text-center">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-primary mb-6">
+                    ติดต่อเรา
+                </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                    เราพร้อมรับฟังและให้บริการคุณเสมอ หากมีข้อสงสัยเกี่ยวกับสินค้าหรือบริการ <br class="hidden md:block"/> ทีมงาน RiceTech ยินดีช่วยเหลือในทุกช่องทาง
+                </p>
+</div>
+</section>
+<!-- Main Contact Grid -->
+<section class="max-w-7xl mx-auto px-10 pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Contact Information -->
+<div class="lg:col-span-5 space-y-12">
+<div class="bg-surface-container-low rounded-xl p-10 space-y-8">
+<h2 class="font-headline text-3xl font-bold text-primary mb-8">ช่องทางการติดต่อ</h2>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">ที่อยู่</h4>
+<p class="text-on-surface-variant leading-relaxed">217 หมู่ที่ 4 ตำบลนาจอมเทียน อำเภอสัตหีบ จ.ชลบุรี 20250</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">เบอร์โทรศัพท์</h4>
+<p class="text-on-surface-variant">091-2612-521</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">อีเมล</h4>
+<p class="text-on-surface-variant">contact@ricetech.com</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Line Official</h4>
+<p class="text-on-surface-variant">@ricetech</p>
+</div>
+</div>
+</div>
+<!-- Visual Accent Card -->
+<div class="relative h-64 rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<img alt="Interior of a modern minimal kitchen" class="w-full h-full object-cover" data-alt="Interior of a modern minimal kitchen with clean white marble surfaces, soft morning light, and elegant kitchen appliances in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIyprJtEUBAzCe2YCFZCNtUF52eLAN0DPHHARFtyBSwjXMbVme7C7CrUYYfKZU56JbSUZI8LgC795sCvrT5_b_ZrOtxi2-387Od8TizxA5DKRJHWA9V0ZObD2M0LRvQlPK96onXlwys1qthpc-t5euzWVyg3-HS6wS4CaDOBgzGDgqpba8EvQI18L9j5ETUhk7SoVzXTAk0BMw197DgO1hMKh6d4ECIz5xtG2UyOdlaKSXlEwZUNxDXn5JDWmP8m0iL2WP3VwENx8"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center">
+<span class="text-white font-headline text-2xl font-semibold tracking-widest uppercase">The Culinary Sanctuary</span>
+</div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl p-10 md:p-14 shadow-[0px_20px_40px_rgba(45,51,53,0.06)]">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-10">ส่งข้อความถึงเรา</h2>
+<form action="#" class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider px-1">ชื่อ-นามสกุล</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container focus:bg-primary-container transition-all outline-none text-on-surface placeholder:text-outline" placeholder="ระบุชื่อของคุณ" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider px-1">อีเมล</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container focus:bg-primary-container transition-all outline-none text-on-surface placeholder:text-outline" placeholder="example@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider px-1">หัวข้อ</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container focus:bg-primary-container transition-all outline-none text-on-surface placeholder:text-outline" placeholder="ระบุหัวข้อที่คุณต้องการติดต่อ" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider px-1">ข้อความ</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary-container focus:bg-primary-container transition-all outline-none text-on-surface placeholder:text-outline resize-none" placeholder="พิมพ์ข้อความของคุณที่นี่..." rows="6"></textarea>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all active:scale-95" type="submit">
+                                ส่งข้อความ
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[500px] bg-surface-container-high relative overflow-hidden group">
+<!-- Simulated Map Component with Overlay -->
+<div class="absolute inset-0 w-full h-full grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
+<img alt="Map location" class="w-full h-full object-cover" data-alt="A stylized overhead map view of a coastal region with clean architectural lines and soft pastel tones" data-location="Na Chom Thian, Sattahip, Chon Buri" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwhPY4o7GpLaxAA8tPQM2qATi6r0swU0w0TGLuGrmkGIvXV1VXJ8QzD7RAg5SGiYKQg2mupPbwT9Jn_E0Hc8PpV9J9ZYyzAfzQvW5RGv2wi_Ynx4wH_0IrnchVJNuY6HAGAcu7BEQ3Q86wZI7-pSYk2CyZ3qa4-oec2diWrEkueDVZUWAVeBXROM_AKUa_1oZVN_dY46Y0hRmQ0GW1TzALnwJAV1U7OiwuxPHcLP26AbEU0enq9hdOfeYashB3ypZiQOgBPgeoE74"/>
+</div>
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="bg-white/90 backdrop-blur-md px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-bold text-on-surface">RiceTech HQ - Sattahip</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[1.5rem] bg-[#ebeef0] py-16 px-10 tonal-layering surface-container mt-[-24px] relative z-20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 font-['Anuphan'] text-sm leading-[1.6]">
+<!-- Brand -->
+<div class="space-y-6">
+<div class="text-lg font-semibold text-[#336769]">RiceTech</div>
+<p class="text-slate-600 max-w-xs">นวัตกรรมเพื่อความสะดวกสบายในห้องครัว ผสานเทคโนโลยีสมัยใหม่เข้ากับวิถีชีวิตดั้งเดิม</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#336769] cursor-pointer hover:opacity-70" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#336769] cursor-pointer hover:opacity-70" data-icon="group">group</span>
+</div>
+</div>
+<!-- Contact -->
+<div class="space-y-4">
+<div class="font-bold text-[#336769] mb-4">ช่องทางติดต่อ</div>
+<div class="text-slate-600 hover:translate-x-1 transition-transform duration-200">Email: contact@ricetech.com</div>
+<div class="text-slate-600 hover:translate-x-1 transition-transform duration-200">Phone: +66 2 123 4567</div>
+<div class="text-slate-600 hover:translate-x-1 transition-transform duration-200">Line: @ricetech</div>
+</div>
+<!-- Copyright & Rights -->
+<div class="space-y-6 md:text-right">
+<div class="text-slate-600">© 2024 SAOWAPAK FASHION CO., LTD. All rights reserved.</div>
+<div class="flex flex-wrap gap-4 md:justify-end">
+<a class="text-slate-600 hover:text-[#336769] transition-colors" href="#">ความเป็นส่วนตัว</a>
+<a class="text-slate-600 hover:text-[#336769] transition-colors" href="#">ข้อตกลงการใช้งาน</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

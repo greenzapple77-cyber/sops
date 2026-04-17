@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&amp;family=Be+Vietnam+Pro:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#ebeef0",
+                    "background": "#f8f9fa",
+                    "inverse-surface": "#0c0f10",
+                    "secondary-fixed": "#caebcc",
+                    "error-dim": "#67040d",
+                    "secondary": "#49664e",
+                    "outline-variant": "#adb3b5",
+                    "secondary-container": "#caebcc",
+                    "on-tertiary": "#fff7f4",
+                    "on-secondary-fixed-variant": "#46624a",
+                    "on-tertiary-fixed-variant": "#6e6054",
+                    "tertiary-fixed-dim": "#efdccd",
+                    "surface": "#f8f9fa",
+                    "surface-container-low": "#f1f4f5",
+                    "primary": "#336769",
+                    "surface-tint": "#336769",
+                    "on-surface-variant": "#5a6062",
+                    "on-primary-fixed-variant": "#2f6365",
+                    "on-tertiary-fixed": "#504439",
+                    "error-container": "#fa746f",
+                    "on-secondary-container": "#3c5841",
+                    "surface-variant": "#dee3e6",
+                    "on-error-container": "#6e0a12",
+                    "primary-container": "#b7ecee",
+                    "secondary-dim": "#3e5a42",
+                    "surface-container-highest": "#dee3e6",
+                    "tertiary-fixed": "#feeadb",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary-container": "#feeadb",
+                    "outline": "#767c7e",
+                    "tertiary": "#6a5d51",
+                    "primary-fixed-dim": "#a9dee0",
+                    "on-primary-fixed": "#0a4749",
+                    "on-primary-container": "#24595c",
+                    "primary-fixed": "#b7ecee",
+                    "inverse-primary": "#c5fbfc",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#e8ffe8",
+                    "on-error": "#fff7f6",
+                    "surface-bright": "#f8f9fa",
+                    "on-background": "#2d3335",
+                    "on-secondary-fixed": "#2a452f",
+                    "surface-container-high": "#e5e9eb",
+                    "on-tertiary-container": "#63564b",
+                    "on-primary": "#e2feff",
+                    "surface-dim": "#d5dbdd",
+                    "secondary-fixed-dim": "#bdddbe",
+                    "error": "#a83836",
+                    "tertiary-dim": "#5e5145",
+                    "on-surface": "#2d3335",
+                    "primary-dim": "#255b5d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Anuphan", "sans-serif"],
+                    "body": ["Anuphan", "sans-serif"],
+                    "label": ["Anuphan", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Anuphan', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-line-rule { border: none !important; }
+        .tonal-transition { transition: background-color 0.3s ease; }
+        .lustre-gradient { background: linear-gradient(135deg, #336769 0%, #b7ecee 100%); }
+        .glass-nav { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- ===== UNIFIED NAV ===== -->
+<header id="main-nav" class="fixed top-0 w-full z-50 bg-white/70 glass-nav shadow-[0px_20px_40px_rgba(45,51,53,0.06)] transition-opacity duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-10 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#336769] hover:opacity-80 transition-opacity">RiceTech</a>
+    <div class="hidden md:flex gap-10 items-center">
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="index.html">หน้าหลัก</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="contact.html">ติดต่อเรา</a>
+      <a class="font-['Anuphan'] text-sm tracking-[0.05em] uppercase text-slate-500 hover:text-[#336769] transition-colors " href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="lustre-gradient text-white px-8 py-3 rounded-full font-bold scale-95 active:opacity-80 transition-transform shadow-lg hidden md:flex">Shop Now</button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-[#336769]/10 rounded-full transition-colors text-[#336769]">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden border-t border-[#336769]/10 bg-white/95">
+    <div class="max-w-7xl mx-auto px-10 flex flex-col py-3 gap-1 font-['Anuphan'] text-sm normal-case">
+      <a class="py-3 border-b border-[#336769]/5 transition-colors text-[#336769] border-b-2 border-[#336769] pb-1" href="index.html">หน้าหลัก</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="about.html">เกี่ยวกับเรา</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="product.html">สินค้าทั้งหมด</a>
+      <a class="py-3 border-b border-[#336769]/5 text-slate-500 hover:text-[#336769] transition-colors " href="contact.html">ติดต่อเรา</a>
+      <a class="py-3 text-slate-500 hover:text-[#336769] transition-colors " href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+    </div>
+  </div>
+</header>
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});
+  (function(){var l=0,n=document.getElementById('main-nav');window.addEventListener('scroll',function(){if(window.innerWidth>=768){n.style.opacity='1';n.style.pointerEvents='auto';return;}var c=window.scrollY;if(c>l&&c>80){n.style.opacity='0';n.style.pointerEvents='none';}else{n.style.opacity='1';n.style.pointerEvents='auto';}l=c;});})();
+</script>
+<!-- ===== END NAV ===== -->
+
+<main class="mt-20">
+<!-- 2. Hero Section -->
+<section class="max-w-7xl mx-auto px-10 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h1 class="text-[3.5rem] font-bold leading-tight text-primary -tracking-[0.02em]">
+                        ความสุขของมื้ออาหาร<br/>เริ่มต้นที่ความใส่ใจ<br/>เทคโนโลยีที่เข้าใจ<br/>รสชาติของบ้าน<br/>สัมผัสความนุ่ม<br/>ในทุกเมล็ดข้าว<br/>ดีไซน์ที่ลงตัว<br/>ในห้องครัวคุณ
+                    </h1>
+<p class="text-on-surface-variant text-lg leading-[1.6] max-w-md">
+                        RiceTech มอบประสบการณ์การหุงข้าวระดับพรีเมียมด้วยเทคโนโลยีเซนเซอร์อัจฉริยะที่ช่วยรักษารสชาติและคุณค่าทางโภชนาการให้สมบูรณ์แบบที่สุด
+                    </p>
+<div class="flex gap-4">
+<button class="lustre-gradient text-white px-10 py-4 rounded-full font-bold shadow-xl transition-all hover:scale-105">เริ่มต้นสำรวจ</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="rounded-xl overflow-hidden shadow-xl aspect-square bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="minimalist white digital rice cooker on a light oak kitchen counter with soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiTfsELMdBHvL9MnY6Hp1QX6tACRaQJHBKQ1lyDvXiFSLb5DuGnpGDPAhoeYpTFsdFbMa7owtj1x_b7y47yI9NfH_bsYrjjDEthJJOfLyLPuTTtJeQohPSCU6GBVxkdDfQNIxS7-im7pkYVU8l14vv66ugYYHxk5UDTWmtA8pzS2SpbREA_O8zDK8hzkG3rbidDTKWcFuL55DQI4sn1Dylm5--rPDIF6gNaBQ5yHMIVAst90G_6HOBLL0F80ze8yG3zusX0_5AtyM"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="close up of steam rising from a premium stainless steel rice cooker with digital interface display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO4eTJ8bT2A7q-EoOPIGBEamDDdl6_W_wM8PbJ2L9O_BhvzdMP48OWwWTVin4NrmA4QdvoBryTBoDnTf9dydrdEkfUGi3t6H1twz0fIErJctfvAPRkprBAYzJdt1ngpEvuxl3V0yLsflHVNGsvOERs0gS3T2eQjV0Ob6J3X-zog13d1WaQTUUSHpGEm-8N88kKGjFwcbupA6DXlVDYHqi3IaAUKxY57BDFkPTijYHVncBp_cP6HW_jBa5o_6VJShmeuHy-ns6FFnc"/>
+</div>
+</div>
+<div class="space-y-4">
+<div class="rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="modern matte black rice cooker in a luxury kitchen setting with marble backsplash and ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs-uTPRsn_puhTn-aRq-8K2ZSGRAzETt5qNTF1kC1maAmOGjaAnU7gwCnzt9WbUH9zoeMIKug133TpIssk9cCHU5Yb71xlGRtcG6k7Q5Wgagwcn7rR0ltLSHKi5hIxJK_w41PIetk-T0w91LOWYjxNd_ddgt55gYvKcuQo3InFjsieMMP7jhwo-2CfQy5twrbTY9ekEbxCFiy-NFtkKVcLUxE6WEqPJV8ym0HI-AQehcleeFI2kRZutkenAHvBbO3e_exAgEuvypI"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-xl aspect-square bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="bowl of perfectly cooked fluffy jasmine rice next to a stylish modern rice cooker on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM3s6BCRDwVWmomsU9uWzUxejgt4qFEAvDbjs4Mddz9qfLZhRC4sgC56n3Ks_rfDeuLFypWCgZFuyMLlw08fvyHQzUG5dELX397trU3IvV9_AT0bwl-ylPFm1gvwZB_SebpjGuioomSlPKveq15q-zpspzWdcv2YQq7f7HUNcRxgl4AcoeabIjhxBvQdofGQRk4gdyEwGB2M7RI0SVVLRhBgVnn1K0nwxjvMDp2GxAojaHpgM5HJsFUVHVS8L14Wh6z6HFvHrtixs"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. About Us -->
+<section class="bg-surface-container py-32">
+<div class="max-w-7xl mx-auto px-10">
+<div class="flex flex-col md:flex-row justify-between gap-12">
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold text-primary mb-6">ศิลปะแห่งการหุงข้าว</h2>
+<p class="text-on-surface-variant text-lg leading-[1.8]">
+                            ที่ RiceTech เราเชื่อว่าการหุงข้าวคือหัวใจของวัฒนธรรมอาหารเอเชีย เราจึงมุ่งมั่นพัฒนาเทคโนโลยีที่ผสานความดั้งเดิมเข้ากับนวัตกรรม เพื่อสร้างสรรค์อุปกรณ์เครื่องครัวที่ไม่เพียงแต่ทำงานได้ดี แต่ยังเป็นส่วนหนึ่งของการตกแต่งบ้านที่สวยงาม
+                        </p>
+</div>
+<div class="md:w-1/3 flex items-end">
+<div class="border-l-4 border-primary pl-8 py-2">
+<span class="block text-4xl font-bold text-primary">15+</span>
+<span class="text-on-surface-variant">ปีแห่งความเชี่ยวชาญในด้านเทคโนโลยีอาหาร</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Why Choose Us -->
+<section class="max-w-7xl mx-auto px-10 py-32">
+<div class="text-center mb-20">
+<h2 class="text-3xl font-bold text-primary mb-4">ทำไมต้องเลือก RiceTech?</h2>
+<div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)] hover:translate-y-[-8px] transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="text-xl font-bold mb-3">AI Precision</h3>
+<p class="text-on-surface-variant text-sm">ระบบคำนวณอุณหภูมิอัจฉริยะ ปรับตามประเภทของข้าวโดยอัตโนมัติ</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)] hover:translate-y-[-8px] transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="eco">eco</span>
+<h3 class="text-xl font-bold mb-3">Eco-Friendly</h3>
+<p class="text-on-surface-variant text-sm">ประหยัดพลังงานเบอร์ 5 พร้อมวัสดุที่เป็นมิตรต่อสิ่งแวดล้อม 100%</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)] hover:translate-y-[-8px] transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-xl font-bold mb-3">Modern Design</h3>
+<p class="text-on-surface-variant text-sm">ดีไซน์มินิมอลที่ได้รับรางวัล Red Dot Design Award 3 ปีซ้อน</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_20px_40px_rgba(45,51,53,0.06)] hover:translate-y-[-8px] transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="verified">verified</span>
+<h3 class="text-xl font-bold mb-3">Warranty Plus</h3>
+<p class="text-on-surface-variant text-sm">รับประกันตัวเครื่องนาน 3 ปี พร้อมบริการซ่อมถึงบ้านทั่วประเทศ</p>
+</div>
+</div>
+</section>
+<!-- 5. Product Catalog -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-7xl mx-auto px-10">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-3xl font-bold text-primary mb-2">คอลเลกชันยอดนิยม</h2>
+<p class="text-on-surface-variant">เลือกสิ่งที่เหมาะกับครอบครัวและไลฟ์สไตล์ของคุณ</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:opacity-70 transition-opacity">
+                        ดูทั้งหมด <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- 9 Slots as requested -->
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="sleek white electronic rice cooker with wood accents on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3015nRZtJPioeres6Cy1YLtUj6vAmCnWSyOX7apuwO4qA1QRCheV3veBbG4UN4-AbGzQZ86jASs05N2rnT288EWIB-ICF3o0A2sCJkHYTQMtNT54larEhbzzUQOzwJlKy0voel6xrNO3j9ZDl8v-4f_nUl_aFqPZfGZ69TnEzSPm0JNsunFtYyB6EbbhjWjoJljukexnUEKaY3Pe6MLWZlAoHb4PDUS3h2ZxjbaYTnfhc-l5RStEREYtg6-AXk0FLmeBoAMfAbgk"/>
+<div class="absolute top-4 right-4 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold">ยอดนิยม</div>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Series S1</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 1.0 ลิตร - เหมาะสำหรับครอบครัวขนาดเล็ก</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿2,490</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Repeat for 9 items with slight variations -->
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="charcoal gray digital rice cooker with high-end LED interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoqmJ1zDCzBEjK-twH5AkDKsVlbIsHrxdP_UfBLS2Bug0UFwJKevGrG8Y5a4YX5fW-n744MQNrJMqMC2EIdqn0XJPir45hGLrGxtK0d2x5XjBqCD-8mOovUpya_HgV17PRl9BWIO2iNMJCz5hJ-d4U5Mr1LFtJF5CuYEVFOErutv9GE_HOAgHFCZ0YLQPKAucooylFwQv-QVwMRNGF9j0Vx3iGEfzuG2Uf-6dS78vK7uMJyYSWHNTJ1pisU9CKfoNImZO7p00zZJA"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Pro X</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 1.8 ลิตร - ระบบแรงดันสูง (Pressure IH)</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿5,900</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="brushed aluminum rice cooker with premium finish in a bright kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNbkDfO_MUv3-JoAN9nlDSITJJyY8TXfug5j-vGY8kEfVuIUp68qab30QgSZlWYQV9VVuM86ruUMDmjpA91v6BC1K-r3Ws97yuEG4Wy20jwxc0OwiUAPdqKytpI47iWoG-f-wYe0VnF8C0Dog9iEhGlTkqFwJj5UlekQ76iC3QML9dBYwkkxZbGqJ8jlyxIvoWMZ-lgCu85-y9sphe3WHjcELeICGwCcogKym0pZeWqLAI1IB9NGHoAy13oP0P2pLD8DlgaFtImM"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Classic Gold</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 2.0 ลิตร - เคลือบสารกันติด 5 ชั้น</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿3,290</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="white minimal smart cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2RXbNxs1wwrwM2cBFvpvJfz_WXwRGPSRdLZr0oVl34h1EQcS2pEjMswx_ycqx8VmJrG-dmOhObZM4rP7UyeAmwWSo6gCyzmvlqdat8twmbWOtyMuSi_pZPI6CgnDWPIpy3KYWCJXtekOjDY2dBYuRVzY36EmWKxCzk8hxDHn7qCmyeFmPaHWsdMm-j_gO5TFyrvfo7Fhv02ein_Imt_YPet-50W4ZjLbVy9kmaqdfQdrnSRk6yvPAq2t4WkXuZ2HCJaqS62rEcUU"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Mini Air</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 0.5 ลิตร - สำหรับพกพาและคอนโด</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿1,890</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="black pro rice cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSo6OZNk4DDqSCG-b1cXSH9s1qIjZ2erhnGB0vLcOe8YZ1uT915I0jR31btm2REaQid9m5BXYBM9E2c2rx5wfI-nnYTTpeWU3OcRwGwMzMpT0xJPkH2YIkzgDA8ftxYRghEx99VZBomxsZ4J9qTDLt7O3JO_uYrHxsi9gyZtXf-p6MaWVe8PQPXo1UaMxkDhj1QykWk9FxsDZ81QyhlztNFAgr22hptntTRkVoNscUbvya5xQ1CaOnwt_J7qckz90rELqQHuLb4HU"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Master IH</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 1.8 ลิตร - ระบบ Induction Heating</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿7,500</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="steel luxury cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEU_qfx-S_E93kEbTH18qajeysxqOcoHqhDLphPKUwq_y3Gix-tFwKhVNz2sVA9AQg6Hj6RkTX9pn4bEOwcxU6Mcz7WHgJuezBs-IA1zVneHLCyhTfKAnCEcefhddrQBsQc2NnuNru92q-D-8PwIV0Vat32pw_76pOFLIv398CG0FMqASfu6dZJIgeGKDFQgupagDZ3m9HL0qZHcLcPbPcZVJq6kWCtERJpFhyUmtmTEk0KHRSa0jyqiNKfIdCJr6_cgIorFDT6_8"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Urban Soft</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 1.0 ลิตร - ฟังก์ชันหุงข้าวเหนียว</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿2,990</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern white cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUFn6xngP2mxal_So7UyOAUIxESyD_EsbkO1KU2LJh5VTg8sGRk5v54-jTF2kBB-x-T8KaJ48Kmz3l-dVcmho0lHV4SHp7UidgLi9DxWK7vNmAkkCW3eaaOPweGgNj5vHOPU46HyzjTW48_0OFYpfze9C0o6DxQ3T89ruiibLnYoJGu1haHVRcVbyW6B93PEwAKe3a5IstO0Z4AvcpPBvukdivgOIuR9SvV236k2erjz7ACQ17SIrZfs2veXQrdqeiNlqVgLv9vDc"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Bloom 1.0</h3>
+<p class="text-on-surface-variant text-sm mb-4">สีพาสเทล - ดีไซน์โค้งมน อบอุ่น</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿2,190</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="black kitchen appliance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChyFxyJ5mSHWYbLM5XLRrFisX364QX2bRtKD_FU5J9er5lMm-3RjykuLt-UO-LKw_Q9kPkW8UlUHpxSSQzI6eg0jgJ5M4aA4Th0ogjLybXlaq0PXbiXxKJoeyuLZpJPi21BdEt-_GFosKDbay0NIoEhqsJ7J1orkqT9H42UiDv_O8d0Bj374RwiFahgHEZ_uBaW1SSmQ18LV93ERVx9fN2iIqd3IFjf84y3iLRzfcNtYXFNjKmFA3iViIUqX1IQJoTrvE9b7PqrAo"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Elite Black</h3>
+<p class="text-on-surface-variant text-sm mb-4">ฟังก์ชันครบครัน - หุง ตุ๋น นึ่ง</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿4,200</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 group shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square rounded-lg overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="silver kitchen tech" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK5QWqiN4epq-lhFJujIxUlKX7GWvq-Cmo5IS05lk5KHZZ99xoDHJsGCTTXGiKgGSh74pB-tIGmem18-FOK-WPFYTfhr3uXDXa-zyusbTSfq6oQF9ha1B8QVzDI7YiB2-h5OQUnqSpiDG7ERV5JWlWe80_o_2Lj9y4EHZISUTMUo9uP_dXfxDOh-zil074qHuvcUi54F6PL3fSd9yygV6u11-PVxGxyW29OHTGgEzB8jO3fJlq244hwVQT6_miH98jF9GQ4TUb90U"/>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">RiceTech Family Plus</h3>
+<p class="text-on-surface-variant text-sm mb-4">ความจุ 3.0 ลิตร - สำหรับครอบครัวใหญ่</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">฿4,990</span>
+<button class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Promotion Banner -->
+<section class="max-w-7xl mx-auto px-10 py-32">
+<div class="lustre-gradient rounded-3xl p-16 text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
+<div class="z-10 relative md:w-2/3">
+<span class="inline-block bg-white/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Flash Sale</span>
+<h2 class="text-5xl font-bold mb-6">ต้อนรับสมาชิกใหม่ <br/>ลดทันที 20%</h2>
+<p class="text-lg text-white/80 mb-8 max-w-lg">เมื่อซื้อหม้อหุงข้าว RiceTech รุ่น Pro X หรือ Master IH รับสิทธิพิเศษส่วนลดและของแถมพรีเมียมเฉพาะเดือนนี้เท่านั้น</p>
+<div class="flex gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold shadow-lg hover:bg-primary-container transition-colors">รับสิทธิ์เลย</button>
+<button class="border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-colors">ดูรายละเอียด</button>
+</div>
+</div>
+<div class="md:w-1/3 z-10">
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+<div class="text-sm font-bold opacity-60 mb-2">โค้ดส่วนลด</div>
+<div class="text-3xl font-bold tracking-widest">RICE20NEW</div>
+</div>
+</div>
+<!-- Abstract circles -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/10 rounded-full"></div>
+<div class="absolute -left-10 -top-10 w-40 h-40 bg-white/5 rounded-full"></div>
+</div>
+</section>
+<!-- 7. Customer Reviews -->
+<section class="bg-surface py-32">
+<div class="max-w-7xl mx-auto px-10">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-primary mb-4">เสียงจากผู้ใช้จริง</h2>
+<p class="text-on-surface-variant">ความประทับใจที่ส่งต่อจากห้องครัวหนึ่งสู่อีกห้องครัว</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"หุงข้าวได้นุ่มมากครับ เหมือนข้าวที่ร้านอาหารญี่ปุ่นเลย ใช้ง่าย ดีไซน์สวยเข้ากับครัวมากครับ"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="smiling middle aged man headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYi5duTh7o59O6nphRZ2f1AOTkypfCc4KPGSvXzAzPxrkqxYt9wA7Ubh-CvTO8pVCaSit3cRg3mKGiK2m0YRb97pMwpAj_t1zSZw3Hrerh6S3hz6fkwot2C3ic5VcHvcyjBKpRmQl3uKfrt2RCEDPyNjxjzf05n5u0l-aXsoOaBCqGofbRbSt0GcISr2IBiQLM5Si08iJVS6h7zy-_1Zf2yCNBkx01yQXOy4QwN4BwRNlGLwmJhAFxNrJyzDpoHBoNgmzMZV0DVEY"/>
+</div>
+<div>
+<div class="font-bold text-sm">คุณวิชัย ส.</div>
+<div class="text-xs text-on-surface-variant">กรุงเทพมหานคร</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"ประทับใจระบบ AI มากค่ะ หุงข้าวกล้องออกมาได้นุ่มทานง่ายมาก ตัวเครื่องเช็ดล้างทำความสะอาดง่ายด้วยค่ะ"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="happy young woman profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzAh2ANmtjfzapkwTLVKIlFu-H6Zs_FXC1iP9AGq0mwXX9I6KEMJ0Z-HTlN3EmmVckgtT_6AuRWXp5PzkVjomB8RcjvaGAnys9TWDexK8s-ZF4nQU_AGSY5cUBZD_3ga9AsXLzcZBMUB10rAPuJ32hip4zEQVGUXpTNwZcHSOyPY0vQze5UU__08Nj97hQCgbGeNHhoXSh6xM0tC4FNO2SjHizbW7MO_eymKCxen_NQMiFFi4zWR8MLS5AhZ8o0cPDgdavvvtiIgE"/>
+</div>
+<div>
+<div class="font-bold text-sm">คุณพรรณราย น.</div>
+<div class="text-xs text-on-surface-variant">เชียงใหม่</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"ซื้อมาเป็นของขวัญขึ้นบ้านใหม่ให้พี่สาว พี่สาวชอบมาก บอกว่าเป็นหม้อหุงข้าวที่สวยที่สุดเท่าที่เคยใช้มาเลย"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="handsome man portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDgaXzlW7T50GJK6L82EX0GV13AKi6ogoeUL5Q2IlB4H3wsdIz25sCFjKsqardrU_8hgVyVj0r4c46XfOP_GUmd_g0z3YHXnsTuFXN4_IoFSp5GE42UPpcKFJudBFAGn7f_2l7aakau3DSZasYmVGGpuI7GCI7yuI0BzpZ9Shs4oRc5IYnL9Zm-a1yh71lwQfGMXnw5s4BlHIuxZEH8EImLLp5BO2r3mZo1QwmiwKb1fxtjqvyUv2loD18OS1qraPiMR-IE23_l8M"/>
+</div>
+<div>
+<div class="font-bold text-sm">คุณธนวัฒน์ พ.</div>
+<div class="text-xs text-on-surface-variant">ขอนแก่น</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 8. Footer -->
+<footer class="bg-[#ebeef0] w-full rounded-t-[1.5rem] tonal-layering surface-container mt-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-10 py-16">
+<div class="space-y-6">
+<div class="text-lg font-semibold text-[#336769]">RiceTech</div>
+<p class="font-['Anuphan'] text-sm leading-[1.6] text-slate-600">
+                    นวัตกรรมเพื่อรสชาติที่สมบูรณ์แบบในทุกมื้ออาหาร เราคัดสรรสิ่งที่ดีที่สุดเพื่อห้องครัวของคุณ
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="photo_camera">photo_camera</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<div class="font-bold text-[#336769]">ติดต่อเรา</div>
+<ul class="space-y-3 font-['Anuphan'] text-sm leading-[1.6] text-slate-600">
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer">Email: contact@ricetech.com</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer">Phone: +66 2 123 4567</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer">Line: @ricetech</li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="font-bold text-[#336769]">ข่าวสารและโปรโมชั่น</div>
+<p class="font-['Anuphan'] text-sm text-slate-600">สมัครสมาชิกเพื่อรับข่าวสารและข้อเสนอพิเศษ</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-primary w-full" placeholder="อีเมลของคุณ" type="email"/>
+<button class="bg-primary text-white p-2 rounded-full">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-10 pb-8 text-center text-xs text-slate-400 border-t border-slate-200 pt-8">
+            © 2024 SAOWAPAK FASHION CO., LTD. All rights reserved.
+        </div>
+</footer>
+</body></html>
